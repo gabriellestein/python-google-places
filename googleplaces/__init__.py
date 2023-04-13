@@ -278,7 +278,7 @@ class GooglePlaces(object):
         self._sensor = sensor
         radius = (radius if radius <= GooglePlaces.MAXIMUM_SEARCH_RADIUS
                   else GooglePlaces.MAXIMUM_SEARCH_RADIUS)
-        if lat_lng is not None or location is not None and pagetoken is None:
+        if lat_lng is not None or location is not None:
             lat_lng_str = self._generate_lat_lng_string(lat_lng, location)
             self._request_params['location'] = lat_lng_str 
         if rankby == 'prominence':
